@@ -55,3 +55,10 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 #Sistema de Login
 gem 'devise'
+
+#Bootstrap
+gem 'bootstrap', '~> 4.0.0.beta2.1'
+gem 'sprockets-rails', :require => 'sprockets/railtie'
+
+#jQuery
+gem 'jquery-rails'
