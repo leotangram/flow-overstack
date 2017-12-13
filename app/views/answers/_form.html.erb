@@ -1,0 +1,11 @@
+<%= form_for :answer, url: question_path do |f| %>	
+	<p>
+		<%= f.label :description %> :<br>
+		<%= f.text_area :description %>
+	</p>
+
+	<p>
+		<%= f.submit "Answer question", class: "btn btn-primary" %>
+	</p>
+
+<% end %>

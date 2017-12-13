@@ -3,7 +3,9 @@
   <hr class="my-4">
   <p class="lead"><%= @question.description %></p>
   <p class="lead">
-    <%= link_to 'Volver', questions_path %>
-    <%= link_to 'Editar', edit_question_path(@question) %>
+    <%= link_to 'Volver', questions_path, class: "btn btn-primary" %>
+    <%= link_to 'Editar', edit_question_path(@question), class: "btn btn-primary" %>
   </p>
 </div>
+
+<%= render 'answers/form' %>
