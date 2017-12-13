@@ -1,12 +1,9 @@
-<h1>Questions#show</h1>
-<p>Find me in app/views/questions/show.html.erb</p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @question.title %>
-</p>
- 
-<p>
-  <strong>Description:</strong>
-  <%= @question.description %>
-</p>
+<div class="jumbotron">
+  <h1 class="display-3"><%= @question.title %></h1>
+  <hr class="my-4">
+  <p class="lead"><%= @question.description %></p>
+  <p class="lead">
+    <%= link_to 'Volver', questions_path %>
+    <%= link_to 'Editar', edit_question_path(@question) %>
+  </p>
+</div>

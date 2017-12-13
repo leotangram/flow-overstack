@@ -1,2 +1,35 @@
-<h1>Questions#edit</h1>
-<p>Find me in app/views/questions/edit.html.erb</p>
+<h1>Editando un artículo</h1>
+ 
+<%= form_for :question, url: question_path(@question), method: :patch do |f| %>
+ 
+  <% if @question.errors.any? %>
+    <div id="error_explanation">
+    <h2>
+        <%= pluralize(@question.errors.count, "error") %> han impedido que el artículo sea grabado:
+    </h2>
+      <ul>
+        <% @question.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </p>
+ 
+  <p>
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </p>
+ 
+  <p>
+    <%= f.submit 'Guardar Artículo' %>
+  </p>
+ 
+<% end %>
+ 
+<%= link_to 'Volver', questions_path %>
+

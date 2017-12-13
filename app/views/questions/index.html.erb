@@ -1,4 +1,31 @@
-<h1>Questions#index</h1>
-<p>Find me in app/views/questions/index.html.erb</p>
+<div class="container">
+  <h2>Questions</h2>
+  <p>Aquí podrás ver el listado de las preguntas realizadas:</p>
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+      	<th>Votes</th>
+      	<th>Answers</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>User</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @questions.each do |question| %>
+      <tr>
+      	<td>Votos</td>
+      	<td>Answers</td>
+        <td><%= link_to question.title, question_path(question) %></td>
+        <td><%= question.description %></td>
+        <td><%= current_user.email %></td>
+        
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
 
-<%= link_to "create question", new_question_path %>
+
+<%= link_to "New question", new_question_path %>
+
