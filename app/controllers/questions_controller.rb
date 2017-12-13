@@ -3,6 +3,7 @@ class QuestionsController < ApplicationController
   end
 
   def show
+    @question = Question.find(params[:id])
   end
 
   def new
@@ -12,6 +13,10 @@ class QuestionsController < ApplicationController
   end
 
   def create
+    @question = Question.new(question_params)
+ 
+    @question.save
+    redirect_to @question
   end
 
   def update
@@ -19,4 +24,9 @@ class QuestionsController < ApplicationController
 
   def destroy
   end
+
+  private
+    def question_params
+      params.require(:question).permit(:title, :description).merge(user_id: current_user.id)
+    end
 end
