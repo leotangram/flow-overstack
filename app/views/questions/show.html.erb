@@ -8,21 +8,7 @@
   </p>
 </div>
 
-<%= form_for [@question, @question.answers.new] do |f| %>	
-	<p>
-		<%= f.label :description %> :<br>
-		<%= f.text_area :description %>
-	</p>
 
-	<p>
-		<%= f.submit "Answer question", class: "btn btn-primary" %>
-	</p>
+<%= render '/answers/index' %>
+<%= render '/answers/form' %>
 
-<% end %>
-
-
-<ul>
-	<% @question.answers.each do |answer| %>
-		<li><%= answer.description %></li>
-	<% end %>
-</ul>

@@ -4,6 +4,7 @@
   <table class="table">
     <thead class="thead-dark">
       <tr>
+        <th>Votos</th>
         <th>Description</th>
         <th>Email</th>
       </tr>
@@ -12,12 +13,11 @@
     <% @question.answers.each do |answer| %>
       <tr>
       	<td>Votos</td>
-        <td><%= link_to answer.description, answer_path(answer), class: "btn btn-default" %></td>
         <td><%= answer.description %></td>
-        <td><%= current_user.email %></td>
-        
+        <td><%= answer.user.email %></td>
       </tr>
     <% end %>
     </tbody>
   </table>
 </div>
+
