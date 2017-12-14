@@ -1,0 +1,23 @@
+<div class="container">
+  <h2>Answers</h2>
+  <p>Aquí podrás ver el listado de las respuestas realizadas:</p>
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th>Description</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @question.answers.each do |answer| %>
+      <tr>
+      	<td>Votos</td>
+        <td><%= link_to answer.description, answer_path(answer), class: "btn btn-default" %></td>
+        <td><%= answer.description %></td>
+        <td><%= current_user.email %></td>
+        
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
