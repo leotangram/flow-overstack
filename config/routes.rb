@@ -2,8 +2,14 @@ Rails.application.routes.draw do
 	
 	resources :questions do 
 	  resources :answers
+	  resources :comments
 	end
 	
+	resources :answers do
+	  	resources :comments
+	end
+
+
 	get '/index', to: 'welcome#index', as: 'welcome'
 	root 'welcome#index'
 

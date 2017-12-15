@@ -12,12 +12,15 @@
     <tbody>
     <% @question.answers.each do |answer| %>
       <tr>
-      	<td>Votos</td>
+        <td>Votos</td>
         <td><%= answer.description %></td>
         <td><%= answer.user.email %></td>
       </tr>
+      <%= render '/comments/index', commentable: answer %>
+      <%= render '/comments/form', commentable: answer %>
     <% end %>
     </tbody>
   </table>
 </div>
+
 

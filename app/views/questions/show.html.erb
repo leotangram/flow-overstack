@@ -9,6 +9,9 @@
 </div>
 
 
-<%= render '/answers/index' %>
+<%= render '/comments/index', commentable: @question %>
+<%= render '/answers/index', commentable: @question %>
+
 <%= render '/answers/form' %>
+
 
