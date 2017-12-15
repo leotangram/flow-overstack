@@ -2,7 +2,7 @@
   <h2>Answers</h2>
   <p>Aquí podrás ver el listado de las respuestas realizadas:</p>
   <table class="table">
-    <thead class="thead-dark">
+    <thead class="thead-dark;" style="background-color: tomato">
       <tr>
         <th>Votos</th>
         <th>Description</th>
@@ -13,14 +13,17 @@
     <% @question.answers.each do |answer| %>
       <tr>
         <td>Votos</td>
-        <td><%= answer.description %></td>
-        <td><%= answer.user.email %></td>
+        <td> <%= answer.description %></td>
+        <td> <%= answer.user.email %></td>
+        <td> <%= render '/comments/index', commentable: answer %></td> 
+        <td> <%= render '/comments/form', commentable: answer %> </td> 
       </tr>
-      <%= render '/comments/index', commentable: answer %>
-      <%= render '/comments/form', commentable: answer %>
     <% end %>
     </tbody>
   </table>
 </div>
+
+
+
 
 
