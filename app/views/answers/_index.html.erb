@@ -2,7 +2,7 @@
   <h2>Answers</h2>
   <p>Aquí podrás ver el listado de las respuestas realizadas:</p>
   <table class="table">
-    <thead class="thead-dark;" style="background-color: tomato">
+    <thead class="thead-dark;" style="background-color: #FFBB33">
       <tr>
         <th>Votos</th>
         <th>Description</th>
@@ -15,6 +15,8 @@
         <td>Votos</td>
         <td> <%= answer.description %></td>
         <td> <%= answer.user.email %></td>
+      </tr>
+      <tr>
         <td> <%= render '/comments/index', commentable: answer %></td> 
         <td> <%= render '/comments/form', commentable: answer %> </td> 
       </tr>
